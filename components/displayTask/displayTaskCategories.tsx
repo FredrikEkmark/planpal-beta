@@ -35,6 +35,7 @@ const DisplayTasksCategories = (props: Props) => {
 
   return (
     <div>
+      <div>Categories</div>
       {buttons.map((button) => (
         <div className="max-w-sm bg-slate-400 p-4">
           <Link key={button.category} href={`/taskpage/${button.category}`}>
@@ -43,6 +44,11 @@ const DisplayTasksCategories = (props: Props) => {
           </Link>
         </div>
       ))}
+      <div className="max-w-sm bg-slate-400 p-4">
+        <Link key={"all"} href={`/taskpage/${"all"}`}>
+          {"All"} ({props.data.length})
+        </Link>
+      </div>
     </div>
   )
 }

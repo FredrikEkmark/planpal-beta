@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react"
+
 interface Item {
   date: string
   id: number
@@ -14,7 +16,15 @@ const DisplayTasksByCategory = (props: Props) => {
   // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
-  const data = props.data.filter((item) => item.category === props.category)
+  const [data, setData] = useState<Item[]>([])
+
+  useEffect(() => {
+    if (props.category === "all") {
+      setData(props.data)
+    } else {
+      setData(props.data.filter((item) => item.category === props.category))
+    }
+  }, [props.category, props.data])
 
   const todayData = data.filter((item) => item.date === specificDate)
 
