@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 interface Item {
   date: string
   id: number
@@ -12,7 +10,7 @@ interface Props {
   category: any
 }
 
-const DisplayTasksCategory = (props: Props) => {
+const DisplayTasksByCategory = (props: Props) => {
   // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
@@ -67,4 +65,4 @@ const DisplayTasksCategory = (props: Props) => {
   )
 }
 
-export default DisplayTasksCategory
+export default DisplayTasksByCategory

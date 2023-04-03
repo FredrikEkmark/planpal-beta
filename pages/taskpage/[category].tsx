@@ -1,4 +1,4 @@
-import DisplayTaskCategory from "@/components/displayTask/displayTaskCategory"
+import DisplayTaskByCategory from "@/components/displayTask/displayTaskByCategory"
 import tempGetTaskData from "@/components/tempGetTaskData"
 import { NextPage } from "next"
 import { useRouter } from "next/router"
@@ -10,10 +10,10 @@ const Category: NextPage<Props> = ({}) => {
   const value = router.query.category
   return (
     <div>
-      <DisplayTaskCategory
+      <DisplayTaskByCategory
         data={tempGetTaskData()}
         category={value}
-      ></DisplayTaskCategory>
+      ></DisplayTaskByCategory>
     </div>
   )
 }
