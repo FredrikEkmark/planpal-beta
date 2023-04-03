@@ -1,4 +1,4 @@
-import DisplayTasks from "@/components/displayTask"
+import DisplayTasksTaskPage from "@/components/displayTask/displayTasksTaskPage"
 import tempGetTaskData from "@/components/tempGetTaskData"
 import { NextPage } from "next"
 
@@ -7,7 +7,7 @@ interface Props {}
 const Index: NextPage<Props> = ({}) => {
   return (
     <div>
-      <DisplayTasks data={tempGetTaskData()}></DisplayTasks>
+      <DisplayTasksTaskPage data={tempGetTaskData()}></DisplayTasksTaskPage>
     </div>
   )
 }
