@@ -26,8 +26,7 @@ const DisplayTasksCategories = (props: Props) => {
         (item) => item.category === buttonCategory
       ).length
       return {
-        category:
-          buttonCategory.charAt(0).toUpperCase() + buttonCategory.slice(1),
+        category: buttonCategory,
         count: count,
       }
     })
@@ -39,7 +38,8 @@ const DisplayTasksCategories = (props: Props) => {
       {buttons.map((button) => (
         <div className="max-w-sm bg-slate-400 p-4">
           <Link key={button.category} href={`/taskpage/${button.category}`}>
-            {button.category} ({button.count})
+            {button.category.charAt(0).toUpperCase() + button.category.slice(1)}{" "}
+            ({button.count})
           </Link>
         </div>
       ))}
