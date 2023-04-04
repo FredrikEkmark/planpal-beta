@@ -20,8 +20,10 @@ const DisplayTasksCategories = (props: Props) => {
   }
   const [buttons, setButtons] = useState<ButtonType[]>([])
 
+  const [categories, setCategories] = useState<string[]>(props.categories)
+
   useEffect(() => {
-    const newButtons = props.categories.map((buttonCategory) => {
+    const newButtons = categories.map((buttonCategory) => {
       const count = props.data.filter(
         (item) => item.category === buttonCategory
       ).length
@@ -37,15 +39,15 @@ const DisplayTasksCategories = (props: Props) => {
     <div>
       <div>Categories</div>
       {buttons.map((button) => (
-        <div className="max-w-sm bg-slate-400 p-4">
-          <Link key={button.category} href={`/taskpage/${button.category}`}>
+        <div key={button.category} className="max-w-sm bg-slate-400 p-4">
+          <Link href={`/taskpage/${button.category}`}>
             {button.category.charAt(0).toUpperCase() + button.category.slice(1)}{" "}
             ({button.count})
           </Link>
         </div>
       ))}
-      <div className="max-w-sm bg-slate-400 p-4">
-        <Link key={"all"} href={`/taskpage/${"all"}`}>
+      <div key={"all"} className="max-w-sm bg-slate-400 p-4">
+        <Link href={`/taskpage/${"all"}`}>
           {"All"} ({props.data.length})
         </Link>
       </div>

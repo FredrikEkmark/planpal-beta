@@ -33,7 +33,7 @@ const DisplayTasksDashboard = (props: Props) => {
   return (
     <div>
       <div className="max-w-sm bg-slate-400 p-4">
-        <div>Today's Tasks</div>
+        <div>Today&apos;s Tasks</div>
         {titles}
         <div>
           <Link href="/taskpage/addTask">Add new task</Link>
