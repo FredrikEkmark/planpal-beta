@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function tempGetTaskData() {
+function TempGetTaskData() {
   const [tasksList, setTasksList] = useState([
     {
       id: 1,
@@ -167,4 +167,4 @@ function tempGetTaskData() {
   return tasksList
 }
 
-export default tempGetTaskData
+export default TempGetTaskData

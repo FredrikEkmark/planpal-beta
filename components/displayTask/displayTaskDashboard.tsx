@@ -12,7 +12,6 @@ interface Props {
 }
 
 const DisplayTasksDashboard = (props: Props) => {
-  // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
   const data = props.data
