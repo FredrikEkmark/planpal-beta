@@ -76,7 +76,7 @@ export default function SignIn() {
             />
 
             <Button
-              href="/dashboard"
+              href="/"
               color="primary"
               type="submit"
               fullWidth
