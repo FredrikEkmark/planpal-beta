@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 function TempGetTaskData() {
-  const [tasksList, setTasksList] = useState([
+  return [
     {
       id: 1,
       title: "Gå ut med Hunden!",
@@ -163,8 +163,7 @@ function TempGetTaskData() {
       date: "2023-04-05",
       category: "fritid",
     },
-  ])
-  return tasksList
+  ]
 }
 
 export default TempGetTaskData

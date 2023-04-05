@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { UserContext } from "@/context/user-context-provider"
+import { useContext, useEffect, useState } from "react"
 
 interface Item {
   date: string
@@ -8,7 +9,6 @@ interface Item {
 }
 
 interface Props {
-  data: Item[]
   category: any
 }
 
@@ -16,15 +16,17 @@ const DisplayTasksByCategory = (props: Props) => {
   // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
+  const { tasks } = useContext(UserContext)
+
   const [data, setData] = useState<Item[]>([])
 
   useEffect(() => {
     if (props.category === "all") {
-      setData(props.data)
+      setData(tasks)
     } else {
-      setData(props.data.filter((item) => item.category === props.category))
+      setData(tasks.filter((item) => item.category === props.category))
     }
-  }, [props.category, props.data])
+  }, [props.category, tasks])
 
   const todayData = data.filter((item) => item.date === specificDate)
 
