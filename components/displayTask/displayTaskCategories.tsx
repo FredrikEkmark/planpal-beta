@@ -1,5 +1,6 @@
+import { UserContext } from "@/context/user-context-provider"
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 
 interface Item {
   date: string
@@ -9,7 +10,6 @@ interface Item {
 }
 
 interface Props {
-  data: Item[]
   categories: string[]
 }
 
@@ -20,11 +20,13 @@ const DisplayTasksCategories = (props: Props) => {
   }
   const [buttons, setButtons] = useState<ButtonType[]>([])
 
+  const { tasks } = useContext(UserContext)
+
   const [categories, setCategories] = useState<string[]>(props.categories)
 
   useEffect(() => {
     const newButtons = categories.map((buttonCategory) => {
-      const count = props.data.filter(
+      const count = tasks.filter(
         (item) => item.category === buttonCategory
       ).length
       return {
@@ -48,7 +50,7 @@ const DisplayTasksCategories = (props: Props) => {
       ))}
       <div key={"all"} className="max-w-sm bg-slate-400 p-4">
         <Link href={`/taskpage/${"all"}`}>
-          {"All"} ({props.data.length})
+          {"All"} ({tasks.length})
         </Link>
       </div>
     </div>

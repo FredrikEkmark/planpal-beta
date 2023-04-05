@@ -1,4 +1,6 @@
+import { UserContext } from "@/context/user-context-provider"
 import Link from "next/link"
+import { useContext } from "react"
 
 interface Item {
   date: string
@@ -7,15 +9,13 @@ interface Item {
   category: string
 }
 
-interface Props {
-  data: Item[]
-}
-
-const DisplayTasksTaskPage = (props: Props) => {
+const DisplayTasksTaskPage = () => {
   // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
-  const data = props.data
+  const { tasks } = useContext(UserContext)
+
+  const data = tasks
 
   const todayData = data.filter((item) => item.date === specificDate)
 
