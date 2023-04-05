@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --colorgreen: #6ABEA6;
+    --colorpurple: #b577d5;
+    --coloryellow: #FBEE7B;
+    --colorwhite: #F3F3F3;
+    --font-family: 'Quicksand'
+    --fontcolor: #646464;
+    --font-weight: bold;
+  }
+
+* {
+  font-style: "Quicksand";
+}
+
+.logo {
+  margin-top: 10px;
+}
+
+.slogan {
+  margin-top: 1rem;
+}
+
+.purpleImage {
+
+}
+
+.backgroundLogin {
+    background-color: var(--coloryellow);
+}
