@@ -2,6 +2,7 @@ import DisplayTaskCategories from "@/components/displayTask/displayTaskCategorie
 import DisplayTasksTaskPage from "@/components/displayTask/displayTasksTaskPage"
 import tempGetTaskData from "@/components/tempGetTaskData"
 import { NextPage } from "next"
+import NavBar from "@/components/navBar"
 
 interface Props {}
 
@@ -13,6 +14,7 @@ const Index: NextPage<Props> = ({}) => {
         data={tempGetTaskData()}
         categories={["skola", "fritid", "övrigt"]}
       ></DisplayTaskCategories>
+      <NavBar />
     </div>
   )
 }

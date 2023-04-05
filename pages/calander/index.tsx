@@ -1,9 +1,14 @@
 import { NextPage } from "next"
+import NavBar from "@/components/navBar"
 
 interface Props {}
 
 const Index: NextPage<Props> = ({}) => {
-  return <div>Calander</div>
+  return (
+    <>
+      <NavBar />
+    </>
+  )
 }
 
 export default Index
