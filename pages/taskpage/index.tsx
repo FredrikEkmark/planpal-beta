@@ -1,6 +1,7 @@
 import DisplayTaskCategories from "@/components/displayTask/displayTaskCategories"
 import DisplayTasksTaskPage from "@/components/displayTask/displayTasksTaskPage"
 import { NextPage } from "next"
+import NavBar from "@/components/navBar"
 
 interface Props {}
 
@@ -11,6 +12,7 @@ const Index: NextPage<Props> = ({}) => {
       <DisplayTaskCategories
         categories={["skola", "fritid", "övrigt"]}
       ></DisplayTaskCategories>
+      <NavBar />
     </div>
   )
 }

@@ -6,7 +6,9 @@ interface Props {}
 const Index: NextPage<Props> = ({}) => {
   return (
     <>
-      <NavBar />
+      <div>
+        <NavBar />
+      </div>
     </>
   )
 }
