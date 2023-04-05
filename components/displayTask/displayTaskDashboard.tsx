@@ -36,7 +36,7 @@ const DisplayTasksDashboard = () => {
         <div>Today&apos;s Tasks</div>
         {titles}
         <div>
-          <Link href="/taskpage/addTask">Add new task</Link>
+          <Link href="/taskpage/addTaskPage">Add new task</Link>
         </div>
       </div>
     </div>

@@ -15,6 +15,8 @@ const DisplayTasksTaskPage = () => {
 
   const { tasks } = useContext(UserContext)
 
+  console.log(tasks)
+
   const data = tasks
 
   const todayData = data.filter((item) => item.date === specificDate)
@@ -37,7 +39,7 @@ const DisplayTasksTaskPage = () => {
         <div>Today</div>
         {titles}
         <div>
-          <Link href="/taskpage/addTask">Add new task</Link>
+          <Link href="/taskpage/addTaskPage">Add new task</Link>
         </div>
       </div>
     </div>

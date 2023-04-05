@@ -4,7 +4,7 @@ import { NextPage } from "next"
 
 interface Props {}
 
-const AddTask: NextPage<Props> = ({}) => {
+const AddTaskPage: NextPage<Props> = ({}) => {
   return (
     <div>
       <AddTaskCard></AddTaskCard>
@@ -13,4 +13,4 @@ const AddTask: NextPage<Props> = ({}) => {
   )
 }
 
-export default AddTask
+export default AddTaskPage

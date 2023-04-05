@@ -1,12 +1,25 @@
+import { UserContext } from "@/context/user-context-provider"
 import { Button } from "@mui/material"
-import { useState } from "react"
+import Link from "next/link"
+import { useContext, useState } from "react"
 
-const AddTaskCard = ({}) => {
+const AddTaskCard = () => {
   const [inputTitle, setInputTitle] = useState<string>("")
   const [inputDescription, setInputDescription] = useState<string>("")
   const [inputDate, setInputDate] = useState<string>("")
   const [inputCategory, setInputCategory] = useState<string>("")
   const [inputReminder, setInputReminder] = useState<string>("")
+  const { addTask } = useContext(UserContext)
+
+  function addTaskContext() {
+    addTask({
+      id: 0,
+      date: inputDate,
+      title: inputTitle,
+      description: inputDescription,
+      category: inputCategory,
+    })
+  }
 
   return (
     <div className=" bg-slate-400">
@@ -48,16 +61,20 @@ const AddTaskCard = ({}) => {
         <option value="övrigt">Övrigt</option>
       </select>
       <br></br>
-      <Button
-        href="/taskpage"
-        color="primary"
-        type="submit"
-        fullWidth
-        variant="outlined"
-        sx={{ mt: 3, mb: 2 }}
-      >
-        Save
-      </Button>
+      <Link href="/taskpage/">
+        <Button
+          color="primary"
+          type="submit"
+          fullWidth
+          variant="outlined"
+          sx={{ mt: 3, mb: 2 }}
+          onClick={() => {
+            addTaskContext()
+          }}
+        >
+          Save
+        </Button>
+      </Link>
     </div>
   )
 }

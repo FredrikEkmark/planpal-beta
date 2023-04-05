@@ -26,6 +26,7 @@ interface UserContextProps {
   setUsername: (username: string) => void
   setPassword: (password: string) => void
   setTasks: (tasks: Task[]) => void
+  addTask: (task: Task) => void
   setCalendar: (calendar: Calendar) => void
 }
 
@@ -41,6 +42,7 @@ const initialUserContext: UserContextProps = {
   setUsername: () => {},
   setPassword: () => {},
   setTasks: () => {},
+  addTask: () => {},
   setCalendar: () => {},
 }
 
@@ -65,6 +67,9 @@ const UserContextProvider: React.FC<UserProviderProps> = ({ children }) => {
     },
     setCalendar: (calendar: Calendar) => {
       setCalendar(calendar)
+    },
+    addTask: function (task: Task): void {
+      setTasks((tasks) => [...tasks, task])
     },
   }
   return <UserContext.Provider value={contextValue} children={children} />
