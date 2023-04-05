@@ -23,11 +23,7 @@ export default function SimpleBottomNavigation() {
             setValue(newValue)
           }}
         >
-          <BottomNavigationAction
-            label=""
-            href="/dashboard"
-            icon={<HomeIcon />}
-          />
+          <BottomNavigationAction label="" href="/" icon={<HomeIcon />} />
           <BottomNavigationAction
             label=""
             href="/calander"
