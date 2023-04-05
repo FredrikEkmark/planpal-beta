@@ -1,4 +1,5 @@
 import DisplayTaskByCategory from "@/components/displayTask/displayTaskByCategory"
+import NavBar from "@/components/navBar"
 import { NextPage } from "next"
 import { useRouter } from "next/router"
 
@@ -10,6 +11,7 @@ const Category: NextPage<Props> = ({}) => {
   return (
     <div>
       <DisplayTaskByCategory category={value}></DisplayTaskByCategory>
+      <NavBar />
     </div>
   )
 }
