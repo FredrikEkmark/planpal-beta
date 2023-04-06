@@ -2,22 +2,13 @@ import { UserContext } from "@/context/user-context-provider"
 import Link from "next/link"
 import { useContext } from "react"
 
-interface Item {
-  date: string
-  id: number
-  title: string
-  category: string
-}
-
 const DisplayTasksTaskPage = () => {
   // change to a today read in when we have a more dynamic database
   const specificDate = new Date("2023-03-28").toISOString().slice(0, 10)
 
-  const { tasks } = useContext(UserContext)
+  const { taskList, setTaskList } = useContext(UserContext)
 
-  console.log(tasks)
-
-  const data = tasks
+  const data = taskList.tasks
 
   const todayData = data.filter((item) => item.date === specificDate)
 
@@ -29,6 +20,17 @@ const DisplayTasksTaskPage = () => {
         id={`task_${item.id}`}
         name={item.title}
         value={item.id}
+        checked={item.done}
+        onChange={(event) => {
+          const updatedTasks = data.map((task) =>
+            task.id === item.id ? { ...task, done: event.target.checked } : task
+          )
+          const updatedTaskList = {
+            tasks: updatedTasks,
+            categorys: taskList.categorys,
+          }
+          setTaskList(updatedTaskList)
+        }}
       />
       <label htmlFor={`task_${item.id}`}>{item.title}</label>
     </div>

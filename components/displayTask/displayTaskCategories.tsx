@@ -7,6 +7,7 @@ interface Item {
   id: number
   title: string
   category: string
+  done: boolean
 }
 
 interface Props {
@@ -20,13 +21,13 @@ const DisplayTasksCategories = (props: Props) => {
   }
   const [buttons, setButtons] = useState<ButtonType[]>([])
 
-  const { tasks } = useContext(UserContext)
+  const { taskList } = useContext(UserContext)
 
   const [categories, setCategories] = useState<string[]>(props.categories)
 
   useEffect(() => {
     const newButtons = categories.map((buttonCategory) => {
-      const count = tasks.filter(
+      const count = taskList.tasks.filter(
         (item) => item.category === buttonCategory
       ).length
       return {
@@ -50,7 +51,7 @@ const DisplayTasksCategories = (props: Props) => {
       ))}
       <div key={"all"} className="max-w-sm bg-slate-400 p-4">
         <Link href={`/taskpage/${"all"}`}>
-          {"All"} ({tasks.length})
+          {"All"} ({taskList.tasks.length})
         </Link>
       </div>
     </div>

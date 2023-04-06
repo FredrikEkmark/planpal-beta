@@ -6,12 +6,18 @@ interface UserProviderProps {
   children: ReactNode
 }
 
+interface TaskList {
+  tasks: Task[]
+  categorys: string[]
+}
+
 interface Task {
   date: string
   id: number
   title: string
   description: string
   category: string
+  done: boolean
 }
 
 interface Calendar {
@@ -21,27 +27,31 @@ interface Calendar {
 interface UserContextProps {
   username: string
   password: string
-  tasks: Task[]
+  taskList: TaskList
   calendar: Calendar
+
   setUsername: (username: string) => void
   setPassword: (password: string) => void
-  setTasks: (tasks: Task[]) => void
+  setTaskList: (taskList: TaskList) => void
   addTask: (task: Task) => void
   setCalendar: (calendar: Calendar) => void
 }
 
 // Default
 
-const initialTasks = TempGetTaskData()
+const initialTaskList = {
+  tasks: TempGetTaskData(),
+  categorys: ["skola", "fritid", "övrigt"],
+}
 
 const initialUserContext: UserContextProps = {
   username: "",
   password: "",
-  tasks: initialTasks,
+  taskList: initialTaskList,
   calendar: { id: 0 },
   setUsername: () => {},
   setPassword: () => {},
-  setTasks: () => {},
+  setTaskList: () => {},
   addTask: () => {},
   setCalendar: () => {},
 }
@@ -51,25 +61,24 @@ export const UserContext = createContext<UserContextProps>(initialUserContext)
 const UserContextProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [username, setUsername] = useState<string>("")
   const [password, setPassword] = useState<string>("")
-  const [tasks, setTasks] = useState<Task[]>(initialTasks) // This should be changed to Database later
+  const [taskList, setTaskList] = useState<TaskList>(initialTaskList) // This should be changed to Database later
   const [calendar, setCalendar] = useState<Calendar>({ id: 0 })
 
   // Connect
   const contextValue: UserContextProps = {
     username,
     password,
-    tasks,
+    taskList,
     calendar,
     setUsername: (username: string) => setUsername(username),
     setPassword: (password: string) => setPassword(password),
-    setTasks: (tasks: Task[]) => {
-      setTasks(tasks)
-    },
-    setCalendar: (calendar: Calendar) => {
-      setCalendar(calendar)
-    },
-    addTask: function (task: Task): void {
-      setTasks((tasks) => [...tasks, task])
+    setTaskList: (taskList: TaskList) => setTaskList(taskList),
+    setCalendar: (calendar: Calendar) => setCalendar(calendar),
+    addTask: (task: Task) => {
+      setTaskList((taskList) => ({
+        ...taskList,
+        tasks: [...taskList.tasks, task],
+      }))
     },
   }
   return <UserContext.Provider value={contextValue} children={children} />

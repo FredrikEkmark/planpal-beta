@@ -8,6 +8,7 @@ function TempGetTaskData() {
       description: "Gå ut med hunden så den inte blir fet",
       date: "2023-03-28",
       category: "skola",
+      done: false,
     },
     {
       id: 2,
@@ -15,6 +16,7 @@ function TempGetTaskData() {
       description: "Fixa tänderna",
       date: "2023-03-28",
       category: "skola",
+      done: false,
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ function TempGetTaskData() {
       description: "Spring lite så du inte blir fet",
       date: "2023-03-29",
       category: "skola",
+      done: false,
     },
     {
       id: 4,
@@ -29,6 +32,7 @@ function TempGetTaskData() {
       description: "Rensa ut gamla kläder och organisera garderoben",
       date: "2023-03-30",
       category: "övrigt",
+      done: false,
     },
     {
       id: 5,
@@ -36,6 +40,7 @@ function TempGetTaskData() {
       description: "Ta en paus och läs en bok",
       date: "2023-03-31",
       category: "fritid",
+      done: false,
     },
     {
       id: 6,
@@ -43,6 +48,7 @@ function TempGetTaskData() {
       description: "Gör övningar för en starkare mage",
       date: "2023-04-01",
       category: "skola",
+      done: false,
     },
     {
       id: 7,
@@ -50,6 +56,7 @@ function TempGetTaskData() {
       description: "Rengör bilen och tvätta av smutsen",
       date: "2023-04-02",
       category: "övrigt",
+      done: false,
     },
     {
       id: 8,
@@ -57,6 +64,7 @@ function TempGetTaskData() {
       description: "Förnya rummet med ny färg",
       date: "2023-04-04",
       category: "övrigt",
+      done: false,
     },
     {
       id: 9,
@@ -64,6 +72,7 @@ function TempGetTaskData() {
       description: "Fortsätt löpträna och förbättra dina tider",
       date: "2023-04-05",
       category: "skola",
+      done: false,
     },
     {
       id: 10,
@@ -71,6 +80,7 @@ function TempGetTaskData() {
       description: "Prova på att laga en ny rätt till middag",
       date: "2023-04-06",
       category: "fritid",
+      done: false,
     },
     {
       id: 11,
@@ -78,6 +88,7 @@ function TempGetTaskData() {
       description: "Förbered dig inför tentan och gå igenom gamla prov",
       date: "2023-04-07",
       category: "skola",
+      done: false,
     },
     {
       id: 12,
@@ -85,6 +96,7 @@ function TempGetTaskData() {
       description: "Fyll trädgården med färgglada blommor",
       date: "2023-04-08",
       category: "fritid",
+      done: false,
     },
     {
       id: 13,
@@ -92,6 +104,7 @@ function TempGetTaskData() {
       description: "Töm kylskåpet på gamla matvaror och gör en inventering",
       date: "2023-04-09",
       category: "övrigt",
+      done: false,
     },
     {
       id: 14,
@@ -99,6 +112,7 @@ function TempGetTaskData() {
       description: "Tvätta bilen så den blir ren och fin",
       date: "2023-03-29",
       category: "övrigt",
+      done: false,
     },
     {
       id: 15,
@@ -106,6 +120,7 @@ function TempGetTaskData() {
       description: "Träna på gymmet",
       date: "2023-03-30",
       category: "fritid",
+      done: false,
     },
     {
       id: 16,
@@ -113,6 +128,7 @@ function TempGetTaskData() {
       description: "Läs en bok för att koppla av",
       date: "2023-03-31",
       category: "fritid",
+      done: false,
     },
     {
       id: 17,
@@ -120,6 +136,7 @@ function TempGetTaskData() {
       description: "Rensa och städa rummet",
       date: "2023-04-01",
       category: "övrigt",
+      done: false,
     },
     {
       id: 18,
@@ -127,6 +144,7 @@ function TempGetTaskData() {
       description: "Gör klart skoluppgiften",
       date: "2023-04-02",
       category: "skola",
+      done: false,
     },
     {
       id: 19,
@@ -134,6 +152,7 @@ function TempGetTaskData() {
       description: "Fira påsk med familjen",
       date: "2023-04-03",
       category: "fritid",
+      done: false,
     },
     {
       id: 20,
@@ -141,6 +160,7 @@ function TempGetTaskData() {
       description: "Träffa vänner för att umgås",
       date: "2023-04-04",
       category: "fritid",
+      done: false,
     },
     {
       id: 21,
@@ -148,6 +168,7 @@ function TempGetTaskData() {
       description: "Planera en resa med familjen",
       date: "2023-04-05",
       category: "övrigt",
+      done: false,
     },
     {
       id: 22,
@@ -155,6 +176,7 @@ function TempGetTaskData() {
       description: "Gör klart hemuppgiften",
       date: "2023-04-05",
       category: "skola",
+      done: false,
     },
     {
       id: 23,
@@ -162,6 +184,7 @@ function TempGetTaskData() {
       description: "Laga en god middag",
       date: "2023-04-05",
       category: "fritid",
+      done: false,
     },
   ]
 }

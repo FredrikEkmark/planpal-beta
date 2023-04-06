@@ -18,6 +18,7 @@ const AddTaskCard = () => {
       title: inputTitle,
       description: inputDescription,
       category: inputCategory,
+      done: false,
     })
   }
 
